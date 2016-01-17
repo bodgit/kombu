@@ -78,6 +78,8 @@ class Broadcast(Queue):
     """
 
     def __init__(self, name=None, queue=None, **kwargs):
+        print(queue)
+        print(queue or 'bcast.%s' % (uuid(), ))
         return super(Broadcast, self).__init__(
             name=(queue or 'bcast.%s' % (uuid(), )),
             **dict({'alias': name,
